@@ -31,6 +31,23 @@ export default {
 
       boxShadow: {
         card: '0.75vmin 0.75vmin var(--color-base-950);'
+      },
+
+      keyframes: {
+        'infinite-scroll': {
+          '0%': { transform: 'translateX(20px)' },
+          '100%': { transform: 'translateX(calc(-100% - 20px))' },
+        },
+
+        'reverse-infinite-scroll': {
+          '0%': { transform: 'translateX(calc(-100% - 20px))' },
+          '100%': { transform: 'translateX(20px)' },
+        }
+      },
+
+      animation: {
+        'infinite-scroll': 'infinite-scroll 20s linear infinite',
+        'reverse-infinite-scroll': 'reverse-infinite-scroll 20s linear infinite',
       }
     },
   },
