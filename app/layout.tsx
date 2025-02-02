@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Courier_Prime } from "next/font/google";
+import { Inter } from "next/font/google";
+
 import "./globals.css";
 
-const courierPrime = Courier_Prime({
-  subsets: ['latin'],
-  variable: '--font-courier-prime',
-  weight: '400',
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${courierPrime.variable} font-courier_prime antialiased`}
+        className={`${inter.variable} font-sans antialiased`}
       >
         {children}
       </body>
