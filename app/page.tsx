@@ -13,7 +13,7 @@ export default function Home() {
                 Olá! Me chamo João Evangelista.
               </h1>
 
-              <h2 className="max-lg:text-lg max-lg:max-w-72 text-xl text-base-500 max-w-lg">
+              <h2 className="max-lg:text-lg max-lg:max-w-96 text-xl text-base-500 max-w-lg">
                 Sou um{" "}
                 <span className="gradient-text animate-gradient-text">
                   desenvolvedor de software
@@ -32,7 +32,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="www.linkedin.com/in/joaogabrielse"
+                href="https://linkedin.com/in/joaogabrielse"
                 target="_blank"
                 className="hover:text-purple-500 transition-colors"
               >
