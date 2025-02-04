@@ -74,7 +74,7 @@ export default {
       },
 
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        courier_prime: ["var(--font-courier-prime)"]
       },
 
       boxShadow: {
@@ -96,9 +96,16 @@ export default {
           '0%': { backgroundPosition: '0% 50%' },
           '100%': { backgroundPosition: '100% 50%' },
         },
+
+        'blob': {
+          '0%': { transform: 'scale(1) translate(0, 0)' },
+          '50%': { transform: 'scale(1.1) translate(25%, -25%)' },
+          '100%': { transform: 'scale(1) translate(0, 0)' },
+        }
       },
 
       animation: {
+        'blob': 'blob 15s infinite',
         'infinite-scroll': 'infinite-scroll 20s linear infinite',
         'reverse-infinite-scroll': 'reverse-infinite-scroll 20s linear infinite',
         'gradient-text': 'gradient-text 6s ease infinite',
@@ -109,18 +116,12 @@ export default {
       center: true,
 
       screens: {
-        sm: "100%",
-        md: "100%",
+        xs: "375px",
+        sm: "640px",
+        md: "768px",
         lg: "1024px",
-        xl: "1024px",
-      },
-
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1rem",
-        md: "2rem",
-        lg: "3rem",
-        xl: "4rem",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     }
   },
