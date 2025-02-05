@@ -29,7 +29,7 @@ export default function Home() {
     "Wordpress",
   ];
 
-  const HOBBY_TECHNOLOGIES = ["Python", "C++", "AWS", "Firebase", "Figma"];
+  const HOBBY_TECHNOLOGIES = ["Python", "C++", "AWS", "Firebase", "Figma", ".NET", "C#"];
 
   return (
     <main>
