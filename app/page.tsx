@@ -7,6 +7,7 @@ import {
   TerminalSquare,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { BlobContainer } from '@/components/ui/blob-Container';
 
 export default function Home() {
   const WORK_TECHNOLOGIES = [
@@ -14,10 +15,11 @@ export default function Home() {
     "TypeScript",
     "React",
     "HTML",
+    "Vue",
     "CSS",
     "Tailwind",
     "NextJS",
-    "React Testing Library",
+    "NuxtJS",
     "Jest",
     "Vitest",
     "NodeJS",
@@ -25,22 +27,15 @@ export default function Home() {
     "Vercel",
     "Docker",
     "Git",
-    "Jira",
     "Wordpress",
   ];
 
-  const HOBBY_TECHNOLOGIES = ["Python", "C++", "AWS", "Firebase", "Figma", ".NET", "C#"];
+  const HOBBY_TECHNOLOGIES = ["Python", "C++", "AWS", "Firebase", "PostgreSQL", "Figma", ".NET", "C#", "MySQL"];
 
   return (
     <main>
-      <div className="relative w-full h-full overflow-hidden">
-        <div className="absolute top-0 left-10 size-[1000px] bg-red-500 rounded-full z-0 blur-2xl animate-blob opacity-35 mix-blend-soft-light animation-delay-1" />
-        <div className="absolute top-0 right-10 size-[1000px] bg-purple-500 rounded-full z-0 blur-2xl animate-blob opacity-50 mix-blend-soft-light animation-delay-2" />
-        <div className="absolute top-2/4 right-10 size-[1000px] bg-yellow-500 rounded-full z-0 blur-2xl animate-blob opacity-50 mix-blend-soft-light animation-delay-1" />
-        <div className="absolute top-2/4 left-10 size-[1000px] bg-purple-500 rounded-full z-0 blur-2xl animate-blob opacity-50 mix-blend-soft-light animation-delay-2" />
-        <div className="absolute bottom-0 right-10 size-[1000px] bg-red-500 rounded-full z-0 blur-2xl animate-blob opacity-50 mix-blend-soft-light animation-delay-1" />
-
-        <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-md:px-4 max-md:my-4 space-y-4">
+      <BlobContainer>
+        <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-md:px-4 max-md:my-4 space-y-10">
           <section className="h-screen w-full flex items-center justify-between gap-4 max-lg:flex-col max-md:items-start max-md:justify-center">
             <div className="space-y-4">
               <h1 className="max-lg:text-3xl max-lg:max-w-full text-6xl max-w-screen-sm font-semibold leading-tight">
@@ -76,11 +71,11 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="grid grid-cols-2 gap-4 max-lg:grid-cols-1">
+          <section className="grid grid-cols-2 gap-4 max-lg:grid-cols-1 max-md:gap-8">
             <div className="space-y-4">
               <h2 className="text-xl text-base-500">Sobre mim</h2>
 
-              <div className="space-y-4 text-xl max-md:text-md  max-md:w-full">
+              <div className="space-y-4 text-xl max-md:text-md max-md:w-full">
                 <p>Sou graduando em Sistemas de Informação (último ano).</p>
 
                 <p>
@@ -93,7 +88,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="flex flex-col items-start justify-between gap-4">
               <div className="space-y-4">
                 <div className="flex justify-start items-center gap-4">
                   <TerminalSquare className="size-6 text-orange-500" />
@@ -101,7 +96,7 @@ export default function Home() {
                   <h3>Utilizado no trabalho</h3>
                 </div>
 
-                <div className="flex gap-4 flex-wrap max-w-md">
+                <div className="flex gap-4 flex-wrap">
                   {WORK_TECHNOLOGIES.map((technology) => (
                     <Badge key={technology}>{technology}</Badge>
                   ))}
@@ -115,7 +110,7 @@ export default function Home() {
                   <h3>Utilizado por hobby</h3>
                 </div>
 
-                <div className="flex gap-4 flex-wrap max-w-1/2">
+                <div className="flex gap-4 flex-wrap">
                   {HOBBY_TECHNOLOGIES.map((technology) => (
                     <Badge key={technology}>{technology}</Badge>
                   ))}
@@ -130,7 +125,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-      </div>
+      </BlobContainer>
     </main>
   );
 }
