@@ -1,13 +1,14 @@
 import Link from "next/link";
-
 import {
   Laugh,
   LucideGithub,
   LucideLinkedin,
   TerminalSquare,
 } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
-import { BlobContainer } from '@/components/ui/blob-Container';
+import { BlobContainer } from "@/components/ui/blob-container";
+import { ExperienceCard } from "@/components/ui/experience-card";
 
 export default function Home() {
   const WORK_TECHNOLOGIES = [
@@ -24,13 +25,48 @@ export default function Home() {
     "Vitest",
     "NodeJS",
     "Express",
+    "NestJS",
     "Vercel",
     "Docker",
     "Git",
     "Wordpress",
   ];
 
-  const HOBBY_TECHNOLOGIES = ["Python", "C++", "AWS", "Firebase", "PostgreSQL", "Figma", ".NET", "C#", "MySQL"];
+  const HOBBY_TECHNOLOGIES = [
+    "Python",
+    "C++",
+    "AWS",
+    "Firebase",
+    "PostgreSQL",
+    "Figma",
+    ".NET",
+    "C#",
+    "MySQL",
+  ];
+
+  const WORK_EXPERIENCES = [
+    {
+      title: "Protecnologia",
+      description:
+        "Desenvolvo e mantenho projetos web, focando em performance e qualidade. Crio interfaces modernas e responsivas, integro APIs e aplico práticas avançadas de SEO para otimizar a experiência do usuário.",
+      date_range: "Dez 2024 - Atualmente",
+      image_src: "/protecnologia.jpeg",
+    },
+    {
+      title: "Notificações Inteligentes",
+      description:
+        "Atuei na manutenção de sistemas legados, implementando soluções de rastreamento e métricas. Participei da modernização da página principal, aplicando práticas de UX e SEO para melhorar a experiência do usuário.",
+      date_range: "Out 2024 - Dez 2024",
+      image_src: "/notificacoesinteligentes.png",
+    },
+    {
+      title: "Witure",
+      description:
+        "Minha primeira experiência foi focada na criação de interfaces dinâmicas e intuitivas. Trabalhei na implementação de autenticação e carrinho de compras, transformando requisitos em soluções ágeis e eficientes.",
+      date_range: "Mai 2022 - Out 2024",
+      image_src: "/witure.svg",
+    },
+  ];
 
   return (
     <main>
@@ -75,7 +111,7 @@ export default function Home() {
             <div className="space-y-4">
               <h2 className="text-xl text-base-500">Sobre mim</h2>
 
-              <div className="space-y-4 text-xl max-md:text-md max-md:w-full">
+              <div className="space-y-4 max-md:text-md max-md:w-full">
                 <p>Sou graduando em Sistemas de Informação (último ano).</p>
 
                 <p>
@@ -119,9 +155,20 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="h-full w-full flex justify-between items-start gap-4 max-lg:flex-col max-lg:items-start">
-            <div className="space-y-4">
-              <h2 className="text-xl text-base-500">Experiências</h2>
+          <section className="h-full w-full flex flex-col space-y-4">
+            <h2 className="text-xl text-base-500">Experiências</h2>
+
+            <div className="space-y-4 divide-y divide-neutral-800 divide-dashed">
+
+            {WORK_EXPERIENCES.map((experience) => (
+              <ExperienceCard
+                key={experience.title}
+                title={experience.title}
+                description={experience.description}
+                imageSrc={experience.image_src}
+                dateRange={experience.date_range}
+              />
+            ))}
             </div>
           </section>
         </div>
