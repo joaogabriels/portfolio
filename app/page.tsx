@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <main>
       <BlobContainer>
-        <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-lg:my-0 max-lg:border-none max-xl:my-5 space-y-10">
+        <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-lg:my-0 max-lg:p-5 max-lg:border-none max-xl:my-5 space-y-10">
           <section className="relative h-screen w-full flex items-center justify-between gap-4 max-md:flex-col max-md:items-start max-md:justify-center">
             <div className="space-y-4">
               <h1 className="max-sm:text-3xl max-md:max-w-full text-6xl max-w-screen-sm font-semibold leading-tight">
