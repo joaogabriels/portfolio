@@ -75,15 +75,15 @@ export default function Home() {
   return (
     <main>
       <BlobContainer>
-        <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-md:px-4 max-md:my-4 space-y-10">
-          <section className="relative h-screen w-full flex items-center justify-between gap-4 max-lg:flex-col max-md:items-start max-md:justify-center">
+        <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-lg:my-0 max-lg:border-none max-xl:my-5 space-y-10">
+          <section className="relative h-screen w-full flex items-center justify-between gap-4 max-md:flex-col max-md:items-start max-md:justify-center">
             <div className="space-y-4">
-              <h1 className="max-lg:text-3xl max-lg:max-w-full text-6xl max-w-screen-sm font-semibold leading-tight">
+              <h1 className="max-sm:text-3xl max-md:max-w-full text-6xl max-w-screen-sm font-semibold leading-tight">
                 Olá! Me chamo João Evangelista
                 <span className="gradient-text animate-gradient-text">.</span>
               </h1>
 
-              <h2 className="max-lg:text-lg max-lg:max-w-full text-xl text-base-500 max-w-lg">
+              <h2 className="max-sm:text-lg max-md:max-w-full text-xl text-base-500 max-w-lg">
                 Sou{" "}
                 <span className="gradient-text animate-gradient-text">
                   desenvolvedor de software
