@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArrowDown,
   Laugh,
   LucideGithub,
   LucideLinkedin,
@@ -42,13 +43,16 @@ export default function Home() {
     ".NET",
     "C#",
     "MySQL",
+    "Jiu-Jitsu",
+    "DJing",
+    "Reading",
   ];
 
   const WORK_EXPERIENCES = [
     {
       title: "Protecnologia",
       description:
-        "Desenvolvo e mantenho projetos web, focando em performance e qualidade. Crio interfaces modernas e responsivas, integro APIs e aplico práticas avançadas de SEO para otimizar a experiência do usuário.",
+        "Desenvolvo e mantenho projetos web, focando em performance e qualidade. Crio interfaces modernas e responsivas, integro APIs e aplico práticas avançadas para otimizar a experiência do usuário.",
       date_range: "Dez 2024 - Atualmente",
       image_src: "/protecnologia.jpeg",
     },
@@ -62,7 +66,7 @@ export default function Home() {
     {
       title: "Witure",
       description:
-        "Minha primeira experiência foi focada na criação de interfaces dinâmicas e intuitivas. Trabalhei na implementação de autenticação e carrinho de compras, transformando requisitos em soluções ágeis e eficientes.",
+        "Minha primeira experiência foi focada na criação de interfaces dinâmicas e intuitivas. Trabalhei na implementação de uma dashboard e um checkout, transformando requisitos em soluções ágeis e eficientes.",
       date_range: "Mai 2022 - Out 2024",
       image_src: "/witure.svg",
     },
@@ -72,7 +76,7 @@ export default function Home() {
     <main>
       <BlobContainer>
         <div className="relative container mx-auto my-10 p-10 border border-neutral-800 rounded-xl bg-neutral-950/50 backdrop-blur-sm w-screen max-md:px-4 max-md:my-4 space-y-10">
-          <section className="h-screen w-full flex items-center justify-between gap-4 max-lg:flex-col max-md:items-start max-md:justify-center">
+          <section className="relative h-screen w-full flex items-center justify-between gap-4 max-lg:flex-col max-md:items-start max-md:justify-center">
             <div className="space-y-4">
               <h1 className="max-lg:text-3xl max-lg:max-w-full text-6xl max-w-screen-sm font-semibold leading-tight">
                 Olá! Me chamo João Evangelista
@@ -104,6 +108,10 @@ export default function Home() {
               >
                 <LucideLinkedin className="size-5" />
               </Link>
+            </div>
+
+            <div className="absolute max-md:bottom-20 bottom-24 left-0 text-base-500">
+              <ArrowDown className="size-5 animate-bounce" />
             </div>
           </section>
 
@@ -159,16 +167,57 @@ export default function Home() {
             <h2 className="text-xl text-base-500">Experiências</h2>
 
             <div className="space-y-4 divide-y divide-neutral-800 divide-dashed">
+              {WORK_EXPERIENCES.map((experience) => (
+                <ExperienceCard
+                  key={experience.title}
+                  title={experience.title}
+                  description={experience.description}
+                  imageSrc={experience.image_src}
+                  dateRange={experience.date_range}
+                />
+              ))}
+            </div>
+          </section>
 
-            {WORK_EXPERIENCES.map((experience) => (
-              <ExperienceCard
-                key={experience.title}
-                title={experience.title}
-                description={experience.description}
-                imageSrc={experience.image_src}
-                dateRange={experience.date_range}
-              />
-            ))}
+          <section className="grid grid-cols-4 gap-4 max-lg:grid-cols-1 max-md:gap-8">
+            <div className="space-y-4 col-span-3">
+              <h2 className="text-xl text-base-500">Contato</h2>
+
+              <div className="space-y-4">
+                <p>
+                  Estou disponível para qualquer forma de contato. Seja para
+                  conversar sobre tecnologia, trabalho ou apenas para bater um
+                  papo. Você pode encontrar meu currículo{" "}
+                  <a href="https://1drv.ms/b/c/503ed045a4ac63b5/Eac7hwVZOUFCpAYrz12i5_cBTMDMzTVagK_TdPwLMP9i_g?e=eQ3jrw" className="hover:text-orange-500 transition-colors cursor-pointer font-semibold" target="_blank">
+                    aqui.
+                  </a>
+                </p>
+
+                <p>
+                  Me mande uma mensagem no email: {" "}
+                  <a href="mailto:joaogabrielsevangelista@mgail.com" className="hover:text-orange-500 transition-colors cursor-pointer font-semibold" target="_blank">
+                    joaogabrielsevangelista@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4 max-md:flex-row items-end justify-end max-md:justify-start max-md:items-center col-span-1">
+              <Link
+                href="https://github.com/joaogabriels"
+                target="_blank"
+                className="hover:text-orange-500 transition-colors"
+              >
+                <LucideGithub className="size-5" />
+              </Link>
+
+              <Link
+                href="https://linkedin.com/in/joaogabrielse"
+                target="_blank"
+                className="hover:text-orange-500 transition-colors"
+              >
+                <LucideLinkedin className="size-5" />
+              </Link>
             </div>
           </section>
         </div>
